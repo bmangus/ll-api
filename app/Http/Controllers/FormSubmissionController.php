@@ -19,7 +19,7 @@ class FormSubmissionController extends Controller
         $record = new FormSubmission();
         $record->body = $body;
         $record->formName = $formName ?? 'unknown';
-        $record->sourceIP = $ip;
+        $record->sourceIP = $ip ?? 'unknown';
         $record->save();
     }
 
