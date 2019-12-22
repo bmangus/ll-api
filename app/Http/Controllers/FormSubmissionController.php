@@ -27,7 +27,7 @@ class FormSubmissionController extends Controller
     {
         $records = $this->getAllFormsByName($formName);
         $records->each(function($f){
-            $f->destroy();
+            $f->delete();
         });
         return response('done');
     }
