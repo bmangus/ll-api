@@ -12,12 +12,13 @@ class FormSubmissionController extends Controller
        return FormSubmission::where('formName', $formName)->get();
     }
 
-    public function post(Request $request)
+    public function post(Request $request, $formName = null)
     {
         $body = $request->get('body');
         $ip = $request->header('x-forwareded-for');
         $record = new FormSubmission();
         $record->body = $body;
+        $record->formName = $formName ?? 'unknown';
         $record->sourceIP = $ip;
         $record->save();
     }

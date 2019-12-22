@@ -16,5 +16,5 @@ Route::get('/', function () {
 });
 
 Route::get('/formSubmissions/{formName}', 'FormSubmissionController@index');
-Route::post('/formSubmission', 'FormSubmissionController@post');
+Route::post('/formSubmission/{formName}', 'FormSubmissionController@post');
 Route::get('/formSubmission/{formName}/delete-forms', 'FormSubmissionController@deleteForms');
