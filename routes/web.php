@@ -12,5 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return abort(403, 'Unauthorized');
 });
+
+Route::get('/formSubmissions/{formName}', 'FormSubmissionController@index');
+Route::post('/formSubmission', 'FormSubmissionController@post');
+Route::get('/formSubmission/{formName}/delete-forms', 'FormSubmissionController@deleteForms');
