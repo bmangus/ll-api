@@ -14,6 +14,8 @@ class FormSubmissionController extends Controller
 
     public function post(Request $request, $formName = null)
     {
+        var_dump($request);
+        die();
         $body = $request->get('body');
         $ip = $request->header('x-forwareded-for');
         $record = new FormSubmission();
